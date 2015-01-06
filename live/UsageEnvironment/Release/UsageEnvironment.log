@@ -1,0 +1,19 @@
+﻿Build started 1/5/2015 8:10:32 PM.
+     1>Project "C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\live\UsageEnvironment\UsageEnvironment.vcxproj" on node 5 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(299,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt HashTable.cpp strDup.cpp UsageEnvironment.cpp
+         HashTable.cpp
+         strDup.cpp
+         UsageEnvironment.cpp
+         Generating Code...
+       Lib:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\live\lib\UsageEnvironment.lib" /NOLOGO Release\HashTable.obj
+         Release\strDup.obj
+         Release\UsageEnvironment.obj
+         UsageEnvironment.vcxproj -> C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\live\lib\UsageEnvironment.lib
+     1>Done Building Project "C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\live\UsageEnvironment\UsageEnvironment.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.71

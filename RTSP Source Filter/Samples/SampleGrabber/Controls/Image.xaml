@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="SampleGrabber.Controls.Image"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Storyboard x:Key="fadeImage">
+            <DoubleAnimation
+                Storyboard.TargetName="image"
+                Storyboard.TargetProperty="Opacity"
+                From="1.0" To="0.0" Duration="0:0:1"
+                />
+            <DoubleAnimation
+                Storyboard.TargetName="image"
+                Storyboard.TargetProperty="Opacity"
+                From="0.0" To="1.0" Duration="0:0:1"
+                />
+        </Storyboard>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid.Triggers>
+            <EventTrigger RoutedEvent="Button.Click" SourceName="capture">
+                <BeginStoryboard Storyboard="{StaticResource fadeImage}"/>
+            </EventTrigger>
+        </Grid.Triggers>
+
+        <Border Margin="15" BorderBrush="Black" Background="Black" CornerRadius="10" BorderThickness="3"  RenderTransformOrigin="0.5,0.5" >
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" Color="Gray" Direction="45" Opacity=".4" RenderingBias="Performance" ShadowDepth="15" />
+            </Border.Effect>
+            <Border.RenderTransform>
+                <ScaleTransform ScaleY="-1"/>
+            </Border.RenderTransform>
+            <Image x:Name="image" Source="{Binding CapturedImage}" Stretch="Uniform"/>
+        </Border>
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                    <TextBlock Text="Image Size: " FontWeight="Bold"/>
+                    <TextBlock Text="{Binding FrameWidth}"/>
+                    <TextBlock Text="x"/>
+                    <TextBlock Text="{Binding FrameHeight}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                    <TextBlock Text="Image Date: " FontWeight="Bold"/>
+                    <TextBlock Text="{Binding ImageDate}"/>
+                </StackPanel>
+            </StackPanel>
+            <Button x:Name="capture" Grid.Column="1" Margin="10" Command="{Binding CaptureImageCommand}">
+                <TextBlock Text="Capture"/>
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,23 @@
+
+#pragma once
+#include "stdafx.h"
+
+/** The id we register our filter as
+*/
+#define FILTER_GUID "{E196A807-3160-4BE2-8A25-C1089CDC65CA}"
+DEFINE_GUID(CLSID_PushSourceRTSP, 
+0xe196a807, 0x3160, 0x4be2, 0x8a, 0x25, 0xc1, 0x8, 0x9c, 0xdc, 0x65, 0xca);
+
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+DEFINE_GUID(nullGuid, 
+		0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0);
+
+#ifdef __cplusplus
+}
+#endif
+

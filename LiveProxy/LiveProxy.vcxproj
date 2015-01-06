@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EEE559F5-304D-4000-BC9E-3A30131A4F21}</ProjectGuid>
+    <RootNamespace>LiveProxy</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <EnableManagedIncrementalBuild>true</EnableManagedIncrementalBuild>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)ffmpeg\lib;$(SolutionDir)live\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(ProjectDir)bin\Debug</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(SolutionDir)Cisco Source Filter\Common\DirectShow;$(SolutionDir)live\BasicUsageEnvironment\include;$(SolutionDir)live\UsageEnvironment\include;$(SolutionDir)live\groupsock\include;$(SolutionDir)live\liveMedia\include;$(SolutionDir)ffmpeg\include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)ffmpeg\lib;$(SolutionDir)live\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(ProjectDir)bin\Release</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USRDLL;_LIB;_UNICODE;UNICODE;_ITERATOR_DEBUG_LEVEL=0;_CRT_SECURE_NO_WARNINGS;MY_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CallingConvention>Cdecl</CallingConvention>
+      <CompileAsManaged>false</CompileAsManaged>
+      <AdditionalIncludeDirectories>C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\ffmpeg\include;C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\live\UsageEnvironment\include;C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\live\groupsock\include;C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\live\BasicUsageEnvironment\include;C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\live\liveMedia\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <AdditionalLibraryDirectories>$(SolutionDir)live\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CustomBuildStep>
+      <Command>copy $(ProjectDir)support\*.dll $(OutputPath)</Command>
+    </CustomBuildStep>
+    <PostBuildEvent>
+      <Command>copy $(ProjectDir)support $(OutDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <PreprocessorDefinitions>_MBCS;MY_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>false</EnableCOMDATFolding>
+      <OptimizeReferences>false</OptimizeReferences>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <AdditionalLibraryDirectories>$(SolutionDir)live\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(ProjectDir)support $(OutDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="H264VideoSink.cpp" />
+    <ClCompile Include="MP4VVideoSink.cpp" />
+    <ClCompile Include="MyRTSPClient.cpp" />
+    <ClCompile Include="MyUsageEnvironment.cpp" />
+    <ClCompile Include="MyVideoSink.cpp" />
+    <ClCompile Include="live.cpp" />
+    <ClCompile Include="MediaQueue.cpp" />
+    <ClCompile Include="StreamClient.cpp" />
+    <ClCompile Include="trace.cpp" />
+    <ClCompile Include="VideoDecoder.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="H264VideoSink.h" />
+    <ClInclude Include="MP4VVideoSink.h" />
+    <ClInclude Include="MyRTSPClient.h" />
+    <ClInclude Include="MyUsageEnvironment.h" />
+    <ClInclude Include="MyVideoSink.h" />
+    <ClInclude Include="live.h" />
+    <ClInclude Include="MediaQueue.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StreamClientState.h" />
+    <ClInclude Include="trace.h" />
+    <ClInclude Include="VideoDecoder.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

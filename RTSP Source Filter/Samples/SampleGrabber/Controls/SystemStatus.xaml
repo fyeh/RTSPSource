@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="SampleGrabber.Controls.SystemStatus"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+            
+            <Style TargetType="Border">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border BorderThickness="0,1,0,0" BorderBrush="Black" Margin="2" CornerRadius="0">
+        <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="75"/>
+        </Grid.ColumnDefinitions>
+
+            <!-- Filter installed-->
+            <Border Grid.Column="0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="16" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <Image.Style>
+                <Style TargetType="{x:Type Image}">
+                    <Style.Triggers>
+                            <DataTrigger Binding="{Binding FilterStatus}" Value="true">
+                            <Setter Property="Source" Value="..\Images\bullet_ball_green.png"/>
+                                <Setter Property="ToolTip" Value=""/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding FilterStatus}" Value="false">
+                            <Setter Property="Source" Value="..\Images\bullet_ball_red.png"/>
+                                <Setter Property="ToolTip" Value="Filter: ERROR - The RTSPSource filter is not correctly installed. Locate RTSPSource.ax and run regsvr32 RTSPSource.ax"/>
+                            </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
+                    <TextBlock>Filter</TextBlock>
+                </StackPanel>
+            </Border>
+
+             <!--DirectX Found-->
+            <Border Grid.Column="2">
+                <StackPanel Orientation="Horizontal">
+                     <Image Width="16" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <Image.Style>
+                <Style TargetType="{x:Type Image}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding DirectX}" Value="true">
+                            <Setter Property="Source" Value="..\Images\bullet_ball_green.png"/>
+                                <Setter Property="ToolTip" Value=""/>
+                            </DataTrigger>
+                        <DataTrigger Binding="{Binding DirectX}" Value="false">
+                            <Setter Property="Source" Value="..\Images\bullet_ball_red.png"/>
+                                <Setter Property="ToolTip" Value="DirectX: ERROR - Unable to located the requred DirectX dlls. Download and install the June 2010 version of DirectX"/>
+                            </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
+                    <TextBlock Margin="5,0,0,0">DirectX</TextBlock>
+                </StackPanel>
+            </Border>
+
+        </Grid>
+</Border>
+</UserControl>

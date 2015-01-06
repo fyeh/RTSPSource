@@ -1,0 +1,60 @@
+﻿Build started 1/5/2015 8:12:00 PM.
+     1>Project "C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\live\groupsock\groupsock.vcxproj" on node 4 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets(346,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D NDEBUG /D _UNICODE /D UNICODE /D _ITERATOR_DEBUG_LEVEL=0 /D _MBCS /Gm /EHsc /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt GroupEId.cpp Groupsock.cpp GroupsockHelper.cpp IOHandlers.cpp NetAddress.cpp NetInterface.cpp
+         NetInterface.cpp
+     1>c:\program files (x86)\microsoft visual studio 11.0\vc\include\errno.h(43): warning C4005: 'EINTR' : macro redefinition
+                 c:\data\myprojects\dvs\techcoastseclab\rtsp_dsfilter\rtspdsf\live\groupsock\include\netcommon.h(38) : see previous definition of 'EINTR'
+     1>c:\program files (x86)\microsoft visual studio 11.0\vc\include\errno.h(50): warning C4005: 'EAGAIN' : macro redefinition
+                 c:\data\myprojects\dvs\techcoastseclab\rtsp_dsfilter\rtspdsf\live\groupsock\include\netcommon.h(37) : see previous definition of 'EAGAIN'
+     1>c:\program files (x86)\microsoft visual studio 11.0\vc\include\errno.h(104): warning C4005: 'EINPROGRESS' : macro redefinition
+                 c:\data\myprojects\dvs\techcoastseclab\rtsp_dsfilter\rtspdsf\live\groupsock\include\netcommon.h(36) : see previous definition of 'EINPROGRESS'
+     1>c:\program files (x86)\microsoft visual studio 11.0\vc\include\errno.h(132): warning C4005: 'EWOULDBLOCK' : macro redefinition
+                 c:\data\myprojects\dvs\techcoastseclab\rtsp_dsfilter\rtspdsf\live\groupsock\include\netcommon.h(35) : see previous definition of 'EWOULDBLOCK'
+         NetAddress.cpp
+     1>c:\data\myprojects\dvs\techcoastseclab\rtsp_dsfilter\rtspdsf\live\groupsock\netaddress.cpp(307): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+         IOHandlers.cpp
+         GroupsockHelper.cpp
+     1>c:\data\myprojects\dvs\techcoastseclab\rtsp_dsfilter\rtspdsf\live\groupsock\groupsockhelper.cpp(145): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\data\myprojects\dvs\techcoastseclab\rtsp_dsfilter\rtspdsf\live\groupsock\groupsockhelper.cpp(246): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\data\myprojects\dvs\techcoastseclab\rtsp_dsfilter\rtspdsf\live\groupsock\groupsockhelper.cpp(325): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\data\myprojects\dvs\techcoastseclab\rtsp_dsfilter\rtspdsf\live\groupsock\groupsockhelper.cpp(627): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\data\myprojects\dvs\techcoastseclab\rtsp_dsfilter\rtspdsf\live\groupsock\groupsockhelper.cpp(662): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\time.inl(86) : see declaration of 'ctime'
+     1>c:\data\myprojects\dvs\techcoastseclab\rtsp_dsfilter\rtspdsf\live\groupsock\groupsockhelper.cpp(664): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\data\myprojects\dvs\techcoastseclab\rtsp_dsfilter\rtspdsf\live\groupsock\groupsockhelper.cpp(719): warning C4244: '=' : conversion from 'time_t' to 'long', possible loss of data
+         Groupsock.cpp
+     1>c:\program files (x86)\microsoft visual studio 11.0\vc\include\errno.h(43): warning C4005: 'EINTR' : macro redefinition
+                 c:\data\myprojects\dvs\techcoastseclab\rtsp_dsfilter\rtspdsf\live\groupsock\include\netcommon.h(38) : see previous definition of 'EINTR'
+     1>c:\program files (x86)\microsoft visual studio 11.0\vc\include\errno.h(50): warning C4005: 'EAGAIN' : macro redefinition
+                 c:\data\myprojects\dvs\techcoastseclab\rtsp_dsfilter\rtspdsf\live\groupsock\include\netcommon.h(37) : see previous definition of 'EAGAIN'
+     1>c:\program files (x86)\microsoft visual studio 11.0\vc\include\errno.h(104): warning C4005: 'EINPROGRESS' : macro redefinition
+                 c:\data\myprojects\dvs\techcoastseclab\rtsp_dsfilter\rtspdsf\live\groupsock\include\netcommon.h(36) : see previous definition of 'EINPROGRESS'
+     1>c:\program files (x86)\microsoft visual studio 11.0\vc\include\errno.h(132): warning C4005: 'EWOULDBLOCK' : macro redefinition
+                 c:\data\myprojects\dvs\techcoastseclab\rtsp_dsfilter\rtspdsf\live\groupsock\include\netcommon.h(35) : see previous definition of 'EWOULDBLOCK'
+     1>c:\data\myprojects\dvs\techcoastseclab\rtsp_dsfilter\rtspdsf\live\groupsock\groupsock.cpp(505): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\data\myprojects\dvs\techcoastseclab\rtsp_dsfilter\rtspdsf\live\groupsock\groupsock.cpp(519): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+         GroupEId.cpp
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\live\lib\groupsock.lib" /NOLOGO Debug\GroupEId.obj
+         Debug\Groupsock.obj
+         Debug\GroupsockHelper.obj
+         Debug\IOHandlers.obj
+         Debug\NetAddress.obj
+         Debug\NetInterface.obj
+         groupsock.vcxproj -> C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\live\lib\groupsock.lib
+     1>Done Building Project "C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\live\groupsock\groupsock.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.93

@@ -1,0 +1,7 @@
+C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\RTSP Source Filter\HelpLib\bin\Release\HelpLib.dll
+C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\RTSP Source Filter\HelpLib\bin\Release\HelpLib.pdb
+C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\RTSP Source Filter\HelpLib\bin\Release\log4net.dll
+C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\RTSP Source Filter\HelpLib\obj\Release\HelpLib.ExceptionHelper.resources
+C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\RTSP Source Filter\HelpLib\obj\Release\HelpLib.csproj.GenerateResource.Cache
+C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\RTSP Source Filter\HelpLib\obj\Release\HelpLib.dll
+C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\RTSP Source Filter\HelpLib\obj\Release\HelpLib.pdb

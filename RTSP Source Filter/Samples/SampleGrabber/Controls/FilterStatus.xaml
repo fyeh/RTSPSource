@@ -1,0 +1,202 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="SampleGrabber.FilterStatus"
+    >
+    <UserControl.Resources>
+        <Style  TargetType="{x:Type Border}" x:Key="borderStyle">
+            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Control.Background" Value="LightGray"/>
+            <Setter Property="Control.BorderBrush" Value="Black"/>
+            <Setter Property="Control.BorderThickness" Value="1"/>
+        </Style>
+        <Style  TargetType="{x:Type StackPanel}" x:Key="stackPanelStye">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style  TargetType="{x:Type TextBlock}" x:Key="textStyle">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Control.FontFamily" Value="Segoe UI"/>
+            <Setter Property="Control.FontSize" Value="14" />
+        </Style>
+
+        <!-- Connectng Arrow -->
+        <Style  TargetType="{x:Type Path}">
+            <Setter Property="Fill" Value="LightGray"/>
+            <Setter Property="Stretch" Value="Fill"/>
+            <Setter Property="Stroke" Value="#FF000000"/>
+            <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+            <Setter Property="Data" Value="M78,88.333333 L141.5,87.500336 142.16667,65.833664 175.83283,96.833545 143.49989,127.16709 142.16656,109.16693 78.166666,108.16694 z"/>
+            <Setter Property="Control.FontSize" Value="14" />
+            <Setter Property="Width" Value="60"/>
+            <Setter Property="Height" Value="24"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        <SkewTransform AngleX="0" AngleY="0"/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform X="0" Y="0"/>
+                    </TransformGroup>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Tag, ElementName=run}" Value="True">
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                                    <LinearColorKeyFrame KeyTime="0:0:0.3" Value="Green"/>
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.EnterActions>
+                    <DataTrigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                                    <LinearColorKeyFrame KeyTime="0:0:0.3" Value="LightGray"/>
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.ExitActions>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- RTSP Filter -->
+        <DataTemplate x:Key="RTSPFilter">
+            <Border Style="{StaticResource borderStyle}" x:Name="efb"  >
+                <StackPanel  Style="{StaticResource stackPanelStye}">
+                    <TextBlock Style="{StaticResource textStyle}" Text="RTSP"/>
+                    <TextBlock Style="{StaticResource textStyle}" Text="Filter"/>
+                </StackPanel>
+            </Border>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding Tag, ElementName=RTSPFilter}" Value="True">
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard x:Name="NewAnimation">
+                            <Storyboard>
+                                <ColorAnimation  Storyboard.TargetName="efb" 
+                                                 Storyboard.TargetProperty="(Control.Background).(SolidColorBrush.Color)"
+                                                 To="LightGreen" Duration="0:0:3" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.EnterActions>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+        <!-- ColorSpace -->
+        <DataTemplate x:Key="colorSpace">
+            <Border Style="{StaticResource borderStyle}" x:Name="colorSpaceb"  >
+                <StackPanel  Style="{StaticResource stackPanelStye}">
+                    <TextBlock Style="{StaticResource textStyle}" Text="Color"/>
+                    <TextBlock Style="{StaticResource textStyle}" Text="Space"/>
+                </StackPanel>
+            </Border>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding Tag, ElementName=colorSpace}" Value="True">
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard x:Name="NewAnimation">
+                            <Storyboard>
+                                <ColorAnimation  Storyboard.TargetName="colorSpaceb" 
+                                                 Storyboard.TargetProperty="(Control.Background).(SolidColorBrush.Color)"
+                                                 To="LightGreen" Duration="0:0:3" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.EnterActions>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+        <!-- Sample Grabber -->
+        <DataTemplate x:Key="sg">
+            <Border Style="{StaticResource borderStyle}" x:Name="sgb"  >
+                <StackPanel  Style="{StaticResource stackPanelStye}">
+                    <TextBlock Style="{StaticResource textStyle}" Text="Sample"/>
+                    <TextBlock Style="{StaticResource textStyle}" Text="Grabber"/>
+                </StackPanel>
+            </Border>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding Tag, ElementName=sg}" Value="True">
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard x:Name="NewAnimation">
+                            <Storyboard>
+                                <ColorAnimation  Storyboard.TargetName="sgb" 
+                                                 Storyboard.TargetProperty="(Control.Background).(SolidColorBrush.Color)"
+                                                 To="LightGreen" Duration="0:0:3" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.EnterActions>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+        <!-- Video Renderer -->
+        <DataTemplate x:Key="rend">
+            <Border Style="{StaticResource borderStyle}" x:Name="rendb"  >
+                <StackPanel  Style="{StaticResource stackPanelStye}">
+                    <TextBlock Style="{StaticResource textStyle}" Text="Video"/>
+                    <TextBlock Style="{StaticResource textStyle}" Text="Renderer"/>
+                </StackPanel>
+            </Border>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding Tag, ElementName=rend}" Value="True">
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard x:Name="NewAnimation">
+                            <Storyboard>
+                                <ColorAnimation  Storyboard.TargetName="rendb" 
+                                                 Storyboard.TargetProperty="(Control.Background).(SolidColorBrush.Color)"
+                                                 To="LightGreen" Duration="0:0:3" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.EnterActions>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="1" x:Name="RTSPFilter" Tag="{Binding Filter}"/>
+        <TextBlock Grid.Column="1" x:Name="run" Tag="{Binding Running}"/>
+        <ContentPresenter ContentTemplate="{StaticResource RTSPFilter}" Grid.Column="0"/>
+
+        <Path Grid.Column="1"/>
+
+        <!-- Color Space Converter -->
+        <TextBlock Grid.Column="2" x:Name="colorSpace" Tag="{Binding Color}"/>
+        <ContentPresenter ContentTemplate="{StaticResource colorSpace}" Grid.Column="2"/>
+
+        <Path Grid.Column="3"/>
+
+        <!-- Sample Grabber -->
+        <TextBlock Grid.Column="4" x:Name="sg" Tag="{Binding Sample}"/>
+        <ContentPresenter ContentTemplate="{StaticResource sg}" Grid.Column="4"/>
+
+        <Path Grid.Column="5"/>
+
+        <!--Video Renderer-->
+        <TextBlock Grid.Column="6" x:Name="rend" Tag="{Binding Render}"/>
+        <ContentPresenter ContentTemplate="{StaticResource rend}" Grid.Column="6"/>
+
+    </Grid>
+</UserControl>

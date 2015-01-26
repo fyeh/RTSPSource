@@ -33,8 +33,11 @@ Microsoft pre-req's
 ===================
 
   Microsoft Visual C++ 2008 Service Pack 1 Redistributable Package MFC Security Update
+  
   Microsoft Visual C++ 2010 Service Pack 1 Redistributable Package MFC Security Update
+  
   Visual C++ Redistributable for Visual Studio 2012 Update 4
+  
   .NET 4
 
   

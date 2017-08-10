@@ -57,7 +57,7 @@
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USRDLL;_LIB;_UNICODE;UNICODE;_ITERATOR_DEBUG_LEVEL=0;_CRT_SECURE_NO_WARNINGS;MY_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <CallingConvention>Cdecl</CallingConvention>
       <CompileAsManaged>false</CompileAsManaged>
-      <AdditionalIncludeDirectories>C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\ffmpeg\include;C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\live\UsageEnvironment\include;C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\live\groupsock\include;C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\live\BasicUsageEnvironment\include;C:\Data\MyProjects\DVS\TechCoastSecLab\RTSP_DSFilter\rtspdsf\live\liveMedia\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ffmpeg\include;$(SolutionDir)live\UsageEnvironment\include;$(SolutionDir)live\groupsock\include;$(SolutionDir)live\BasicUsageEnvironment\include;$(SolutionDir)live\liveMedia\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
